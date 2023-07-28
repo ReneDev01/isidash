@@ -1,15 +1,13 @@
 import './App.css';
-
-
 import Home from "./views/Home";
 import ProductList from './views/products/ProductList';
 import AddNewProduct from './views/products/AddNew';
 import AddCategory from './views/categories/AddCategory';
 import OrdersList from './views/orders/OrdersList';
-import AddUser from './views/users/AddUser';
-import AddSeller from './views/sellers/AddSeller';
 import TransactionList from './views/transactions/TransactionList';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import UserList from './views/users/userList';
+import SellerList from './views/sellers/SellerList';
 function App() {
   return (
     <div className='wrapper'>
@@ -20,9 +18,11 @@ function App() {
           <Route path='/newProduct' element={<AddNewProduct/>}></Route>
           <Route path='/categories' element={<AddCategory/>}></Route>
           <Route path='/orders' element={<OrdersList/>}></Route>
-          <Route path='/users' element={<AddUser/>}></Route>
-          <Route path='/sellers' element={<AddSeller/>}></Route>
+          <Route path='/users' element={<UserList/>}></Route>
+          <Route path='/sellers' element={<SellerList/>}></Route>
           <Route path='/transactions' element={<TransactionList/>}></Route>
+          <Route path='/delete/category/:id' element={<AddCategory/>}></Route>
+          <Route path='/category/edit/:id' element={<AddCategory/>}></Route>
         </Routes>
       </Router>
     </div>
